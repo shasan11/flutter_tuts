@@ -13,37 +13,18 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: const Text("Productivity Clock"),
-      ),
-      body: ListView(
-        scrollDirection: Axis.vertical, //vertical pani rakhna milchha
-        addAutomaticKeepAlives:
-            false, //it means to garbage collect the items that are no more on screen
-        children: [
-          Container(
-            color: Colors.green,
-            width: 500,
-            height: 500,
-          ),
-          Container(
-            color: Colors.orange,
-            width: 500,
-            height: 500,
-          ),
-          Container(
-            color: Colors.blue,
-            width: 500,
-            height: 500,
-          ),
-          Container(
-            color: Colors.purple,
-            width: 500,
-            height: 500,
-          ),
-        ],
-      ),
-    ));
+            appBar: AppBar(
+              backgroundColor: Colors.green,
+              title: const Text("Productivity Clock"),
+            ),
+            body: ListView.builder(itemBuilder: (_, index) {
+              return Container(
+                //its infite
+                color:
+                    Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                width: 50,
+                height: 400,
+              );
+            })));
   }
 }
