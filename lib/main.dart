@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,19 +17,32 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.green,
         title: const Text("Productivity Clock"),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {},
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Accounts'),
+      body: ListView(
+        scrollDirection: Axis.vertical, //vertical pani rakhna milchha
+        addAutomaticKeepAlives:
+            false, //it means to garbage collect the items that are no more on screen
+        children: [
+          Container(
+            color: Colors.green,
+            width: 500,
+            height: 500,
+          ),
+          Container(
+            color: Colors.orange,
+            width: 500,
+            height: 500,
+          ),
+          Container(
+            color: Colors.blue,
+            width: 500,
+            height: 500,
+          ),
+          Container(
+            color: Colors.purple,
+            width: 500,
+            height: 500,
+          ),
         ],
-      ),
-      drawer: Drawer(
-        child: Text('Yo !'),
       ),
     ));
   }
