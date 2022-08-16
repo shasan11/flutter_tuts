@@ -15,20 +15,19 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.green,
         title: const Text("Productivity Clock"),
       ),
-      body: Stack(
-        children: [
-          Container(
-            color: Colors.red,
-            width: 200,
-            height: 200,
-          ),
-          Align(
-            //insted u can also use positon and provide top and left value
-            child: Icon(Icons
-                .verified), //align code is at bottom so its at first layer,
-            alignment: Alignment.center,
-          )
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Accounts'),
         ],
+      ),
+      drawer: Drawer(
+        child: Text('Yo !'),
       ),
     ));
   }
