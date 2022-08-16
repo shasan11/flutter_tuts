@@ -15,13 +15,15 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.green,
         title: const Text("Productivity Clock"),
       ),
-      body: Container(
-        //container is like div in HTML
-        child: Center(
-            child: const Text(
-                "Hello World")), //Use padding in place of center for specific padding and use SizedBox for box with specific size
-        color: Colors.blueAccent,
-        margin: const EdgeInsets.all(40),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment
+            .end, //You can use expanded and inside provide flex vlaue
+        children: const [
+          Icon(Icons.backpack),
+          Icon(Icons.car_crash_sharp),
+          Icon(Icons.add_alert_outlined)
+        ],
       ),
     ));
   }
