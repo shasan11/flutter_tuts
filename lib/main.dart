@@ -15,14 +15,19 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.green,
         title: const Text("Productivity Clock"),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment
-            .end, //You can use expanded and inside provide flex vlaue
-        children: const [
-          Icon(Icons.backpack),
-          Icon(Icons.car_crash_sharp),
-          Icon(Icons.add_alert_outlined)
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.red,
+            width: 200,
+            height: 200,
+          ),
+          Align(
+            //insted u can also use positon and provide top and left value
+            child: Icon(Icons
+                .verified), //align code is at bottom so its at first layer,
+            alignment: Alignment.center,
+          )
         ],
       ),
     ));
